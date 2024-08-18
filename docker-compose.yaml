@@ -3,3 +3,5 @@ services:
     container_name: alerts_cont
     build: .
     entrypoint: python alert.py --id $API_ID --hash $API_HASH --phone $PHONE_NUMBER --channel $CHANNEL_USERNAME --group $GROUP_USERNAME --keyword '$KEYWORDS' --session $SESSION_PATH
+    volumes:
+      - ./alert.py:/opt/app/alert.py:ro
