@@ -1,4 +1,5 @@
 import asyncio
+import sys
 from telethon import TelegramClient, events
 
 from optparse import OptionParser
@@ -21,6 +22,7 @@ phone_number = opt.phone_number
 
 if not opt.session:
     client = TelegramClient('session', api_id, api_hash)
+    sys.exit(0)
 else:
     client = TelegramClient(opt.session, api_id, api_hash)
 
